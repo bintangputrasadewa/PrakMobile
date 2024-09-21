@@ -11,7 +11,6 @@ class Pesanan {
     this.jumlah,
   });
 
-  // Menggunakan Null Conditional dan Ternary Operator
   String keterangan() {
     return 'Nama Pemesan: ${namaPemesan ?? 'Tidak diketahui'}\n'
            'Roti: ${roti.nama}\n'
