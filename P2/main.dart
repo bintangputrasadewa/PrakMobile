@@ -6,35 +6,47 @@ void main() {
   List<TokoRoti> daftarRoti = [
     TokoRoti(nama: 'Roti Tawar', harga: 15000),
     TokoRoti(nama: 'Roti Manis', harga: 10000),
-    TokoRoti(nama: 'Roti Cokelat', harga: 20000),
+    TokoRoti(nama: 'Roti Apem', harga: 3000),
+    TokoRoti(nama: 'Pao', harga: 20000),
+    TokoRoti(nama: 'Croissant', harga: 40000),
+    TokoRoti(nama: 'Pain au chocolat', harga: 55000),
+    TokoRoti(nama: 'Baguette', harga: 63000),
+    TokoRoti(nama: 'Pretzel', harga: 44000),
   ];
   List<Pesanan> daftarPesanan = [];
 
   bool berjalan = true;
   while (berjalan) {
-    print('\n--- Aplikasi Toko Roti ---');
-    print('1. Lihat Daftar Roti');
-    print('2. Buat Pesanan');
-    print('3. Lihat Daftar Pesanan');
-    print('4. Keluar');
+    print('\n==========================');
+    print('--- Aplikasi Toko Roti ---');
+    print('==========================');
+    print('| 1. Lihat Daftar Roti   |');
+    print('| 2. Buat Pesanan        |');
+    print('| 3. Lihat Daftar Pesanan|');
+    print('| 4. Keluar              |');
+    print('==========================');
     stdout.write('Masukkan pilihan Anda: ');
     String? pilihan = stdin.readLineSync();
 
     if (pilihan == '1') {
-      print('\nDaftar Roti');
+      print('\n====================');
+      print('|    Daftar Roti   |');
+      print('====================');
       daftarRoti.isEmpty
           ? print('Belum ada roti yang tersedia!')
           : daftarRoti.asMap().forEach((index, roti) {
               print('${index + 1}. ${roti.keterangan()}');
             });
     } else if (pilihan == '2') {
-      print('\nDaftar Roti');
+      print('\n====================');
+      print('|    Daftar Roti   |');
+      print('====================');
       daftarRoti.isEmpty
           ? print('Belum ada roti yang tersedia!')
           : daftarRoti.asMap().forEach((index, roti) {
               print('${index + 1}. ${roti.keterangan()}');
             });
-      stdout.write('Pilih nomor roti yang diinginkan: ');
+      stdout.write('\nPilih nomor roti yang diinginkan: ');
       String? pilihRoti = stdin.readLineSync();
       int? nomorRoti = int.tryParse(pilihRoti ?? '');
 
@@ -51,15 +63,17 @@ void main() {
             namaPemesan: namaPemesan,
             jumlah: jumlah,
           ));
-          print('Pesanan telah dibuat.');
+          print('Pesanan telah dibuat');
         } else {
-          print('Input tidak valid.');
+          print('Input tidak valid');
         }
       } else {
-        print('Nomor roti tidak valid.');
+        print('Nomor roti tidak valid');
       }
     } else if (pilihan == '3') {
-      print('\nDaftar Pesanan');
+      print('\n====================');
+      print('-- Daftar Pesanan --');
+      print('====================');
       daftarPesanan.isEmpty
           ? print('Belum ada pesanan yang dibuat!')
           : daftarPesanan.asMap().forEach((index, pesanan) {
